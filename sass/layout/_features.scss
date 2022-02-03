@@ -26,6 +26,8 @@
 .feature-list__thumb {
   display: flex;
   width: 270px;
+  // width: auto;
+  // max-width: 450px;
   height: 120px;
   margin-bottom: 30px;
   background-color: #f5f4fa;
