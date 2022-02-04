@@ -1,6 +1,7 @@
 .section {
   // padding-bottom: 94px;
   // padding-top: 94px;
+
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -10,8 +11,9 @@
 }
 
 .section__title {
-  margin-top: 0;
   // margin-bottom: 50px;
+
+  margin-top: 0;
   margin-bottom: 30px;
 
   color: var(--title-text-color);
