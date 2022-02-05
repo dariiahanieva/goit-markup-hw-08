@@ -1,18 +1,23 @@
 .hero {
   height: 600px;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  // padding-top: 200px;
+  // padding-bottom: 200px;
   background-color: var(--bcg-color);
+  display: flex;
   text-align: center;
+  align-items: center;
   @media screen and (min-width: 480px) {
   }
   @media screen and (min-width: 768px) {
   }
   @media screen and (min-width: 1200px) {
+    padding-top: 200px;
+    padding-bottom: 200px;
   }
 }
 .hero__container {
   text-align: center;
+  align-items: center;
   padding: 0;
   @media screen and (min-width: 480px) {
   }
