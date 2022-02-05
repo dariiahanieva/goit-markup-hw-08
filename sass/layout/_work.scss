@@ -1,16 +1,20 @@
-.work-item {
-  display: flex;
-  width: 370px;
-  margin-right: 30px;
-  &:nth-child(3n) {
-    margin-right: 0;
+.work-display {
+  display: none;
+  @media screen and (min-width: 1200px) {
+    display: inline;
   }
 }
 
+.work-item {
+  display: flex;
+}
+
 .work-item__class {
-  width: 370px;
   margin-right: 30px;
   position: relative;
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
 }
 
 .work-item__descripton {
