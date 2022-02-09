@@ -141,17 +141,10 @@
   &:focus {
     fill: --accent-color;
   }
-
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-  @media screen and (min-width: 1200px) {
-    display: none;
-  }
 }
 
 .mobile-menu {
-  // display: flex;
+  display: flex;
   position: fixed;
 
   top: 0;
