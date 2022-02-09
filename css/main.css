@@ -521,9 +521,10 @@ textarea {
 
 @media screen and (min-width: 768px) {
   .contacts {
-    display: inline-block;
+    display: block;
     align-items: center;
     margin-left: auto;
+    height: 100%;
   }
 }
 
@@ -581,8 +582,25 @@ textarea {
   background-color: transparent;
 }
 
-.button-menu-open:hover, .button-menu-open:focus {
-  fill: --accent-color;
+@media screen and (min-width: 768px) {
+  .button-menu-open {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .button-menu-open {
+    display: none;
+  }
+}
+
+.menu-open-icon {
+  fill: var(--title-text-color);
+}
+
+.menu-open-icon:hover,
+.menu-open-icon :focus {
+  fill: var(--accent-color);
 }
 
 .mobile-menu {
@@ -595,6 +613,7 @@ textarea {
   z-index: 1;
   padding: 48px 40px;
   background-color: var(--primary-white-color);
+  transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu .container {
@@ -614,6 +633,12 @@ textarea {
   .mobile-menu {
     display: none;
   }
+}
+
+.mobile-menu.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .menu-close-button {
@@ -643,6 +668,12 @@ textarea {
   fill: var(--accent-color);
 }
 
+.mobile-nav .link.current {
+  position: relative;
+  display: block;
+  color: var(--accent-color);
+}
+
 .mobile-nav__item {
   padding-top: 32px;
 }
@@ -650,7 +681,7 @@ textarea {
 .mobile-nav .link {
   font-weight: 500;
   font-size: 40px;
-  line-height: 47px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   text-decoration: none;
   cursor: pointer;
@@ -676,7 +707,7 @@ textarea {
   color: var(--accent-color);
   font-weight: 500;
   font-size: 34px;
-  line-height: 40px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   color: var(--accent-color);
   text-decoration: none;
@@ -685,7 +716,7 @@ textarea {
 .mobile-link-mail {
   font-weight: 500;
   font-size: 24px;
-  line-height: 28px;
+  line-height: 1.16;
   letter-spacing: 0.02em;
   font-style: normal;
   cursor: pointer;
@@ -713,11 +744,18 @@ textarea {
 
 .mobile-social-item {
   text-decoration: none;
-  margin-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
 }
 
-.mobile-social-item:not(:last-child) {
-  border: 1px solid rgba(33, 33, 33, 0.2);
+.mobile-social-item:last-child {
+  border: none;
+  padding-right: 0;
+}
+
+.mobile-social-item:first-child {
+  padding-left: 0px;
 }
 
 .mobile-social-link {
@@ -1203,16 +1241,45 @@ textarea {
 
 .footer {
   background-color: var(--bcg-color);
+  height: 100%;
   padding-top: 60px;
   padding-bottom: 60px;
-  height: 252px;
 }
 
-.footer-contacts {
+@media screen and (min-width: 1200px) {
+  .footer {
+    height: 252px;
+  }
+}
+
+.footer-container {
+  height: 100%;
   display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    align-items: initial;
+    align-content: baseline;
+  }
 }
 
 .footer-contacts__list {
+  align-items: center;
   font-size: 14px;
   font-style: normal;
   line-height: 1.71;
@@ -1247,13 +1314,29 @@ textarea {
 }
 
 .footer-social {
-  margin-left: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-social {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-social {
+    display: inline;
+    margin-left: 70px;
+    margin-top: 0;
+    text-align: left;
+  }
 }
 
 .footer__title {
-  display: flex;
   color: var(--primary-white-color);
-  margin-bottom: 20px;
   height: 16px;
   font-family: var(--primary-fonts);
   font-style: normal;
@@ -1262,6 +1345,13 @@ textarea {
   line-height: 16px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  margin: 0px;
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__title {
+    text-align: left;
+  }
 }
 
 .footer-social__item:not(:last-child) {
@@ -1295,19 +1385,41 @@ textarea {
 }
 
 .footer-box {
-  margin-left: 93px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-box {
+    align-items: flex-start;
+    justify-content: initial;
+    margin-top: 0;
+    margin-left: 93px;
+  }
 }
 
 .footer-box__wrap {
-  height: 50px;
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-box__wrap {
+    display: inline-flex;
+    margin-top: 0;
+  }
 }
 
 .footer-box__input {
-  margin-right: 10px;
   padding-left: 16px;
   height: 50px;
-  width: 358px;
+  width: 450px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -1316,6 +1428,14 @@ textarea {
   outline: none;
   color: var(--primary-white-color);
   cursor: pointer;
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-box__input {
+    margin-top: 20px;
+    margin-right: 10px;
+    width: 358px;
+  }
 }
 
 .footer-box__icon {

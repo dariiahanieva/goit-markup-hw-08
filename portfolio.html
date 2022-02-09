@@ -20,17 +20,15 @@
         <!-- Шапка сайта -->
         <header class="page-header">
             <div class="container header-container">
+                <a href="./index.html" class="logo">
+                    Web<span class="logo-web-header">Studio</span>
+                </a>
                 <nav class="header-nav">
-                    <a href="./index.html" class="logo">
-                        Web<span class="logo-web-header">Studio</span>
-                    </a>
-                    <div class="">
-                        <ul class="site-nav list">
-                            <li class="site-nav__item"><a href="./index.html" class="link ">Студия</a></li>
-                            <li class="site-nav__item"><a href="./portfolio.html" class="link current">Портфолио</a></li>
-                            <li class="site-nav__item"><a href="" class="link">Контакты</a></li>
-                        </ul>
-                    </div>
+                    <ul class="site-nav list">
+                        <li class="site-nav__item"><a href="./index.html" class="link">Студия</a></li>
+                        <li class="site-nav__item"><a href="./portfolio.html" class="link current">Портфолио</a></li>
+                        <li class="site-nav__item"><a href="" class="link">Контакты</a></li>
+                    </ul>
                 </nav>
                 <ul class="contacts list">
                     <li class="contacts__item link">
@@ -48,6 +46,62 @@
                             +38 096 111 11 11</a>
                     </li>
                 </ul>
+                <button class="button-menu-open" data-menu-open>
+                    <svg class="menu-open-icon" width="40" height="40">
+                        <use href="./img/icons.svg#icon-button_open_menu">
+                        </use>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-menu is-hidden" data-menu>
+                <div class="container">
+                    <div class="mob-menu-top">
+                        <button class="menu-close-button" data-menu-close>
+                            <svg class="menu-close-icon" width="40" height="40">
+                                <use href="./img/icons.svg#icon-button_close_menu">
+                                </use>
+                            </svg>
+                        </button>
+        
+                        <ul class="mobile-nav list">
+                            <li class="mobile-nav__item">
+                                <a href="./index.html" class="link">Студия</a>
+                            </li>
+                            <li class="mobile-nav__item">
+                                <a href="./portfolio.html" class="link current">Портфолио</a>
+                            </li>
+                            <li class="mobile-nav__item">
+                                <a href="" class="link">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mob-menu-bottom">
+                        <ul class="mobile-contacts list">
+                            <li class="mobile-contacts-phone">
+                                <a href="tel:+380961111111" class="link mobile-link-phn">
+                                    +38 096 111 11 11</a>
+                            </li>
+                            <li class="mobile-contacts-mail">
+                                <a href="mailto:info@devstudio.com" class="link mobile-link-mail">
+                                    info@devstudio.com</a>
+                            </li>
+                        </ul>
+                        <ul class="mobile-social list">
+                            <li class="mobile-social-item">
+                                <a href="" class="link mobile-social-link">Instagram</a>
+                            </li>
+                            <li class="mobile-social-item">
+                                <a href="" class="link mobile-social-link">Twitter</a>
+                            </li>
+                            <li class="mobile-social-item">
+                                <a href="" class="link mobile-social-link">Facebook</a>
+                            </li>
+                            <li class="mobile-social-item">
+                                <a href="" class="link mobile-social-link">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </header>
         <main class="portfolio">
@@ -282,9 +336,9 @@
             </div>
         </main>
         <!-- Футер-->
-        <!-- <footer class="footer ">
-            <div class="container footer-contacts">
-                <div>
+        <footer class="footer ">
+            <div class="container footer-container">
+                <div class="footer-contacts">
                     <a href="./index.html" class="logo">
                         Web<span class="logo-web-footer">Studio</span>
                     </a>
@@ -353,6 +407,7 @@
                     </div>
                 </div>
             </div>
-        </footer> -->
+        </footer>
+        <script src="./js/mobile-menu.js"></script>
     </body>
 </html>
