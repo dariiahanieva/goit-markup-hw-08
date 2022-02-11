@@ -393,11 +393,17 @@ textarea {
 .form-check-text {
   font-size: 12px;
   line-height: 1.1;
-  display: inline-flex;
+  display: flex;
   white-space: nowrap;
-  text-align: center;
   align-items: center;
   cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .form-check-text {
+    display: inline;
+    white-space: normal;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -448,17 +454,12 @@ textarea {
 .header-container {
   display: flex;
   align-items: center;
+  height: 60px;
 }
 
 @media screen and (min-width: 768px) {
   .header-container {
-    justify-content: space-between;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .header-container {
-    justify-content: baseline;
+    height: 80px;
   }
 }
 
@@ -470,6 +471,7 @@ textarea {
 @media screen and (min-width: 768px) {
   .site-nav {
     display: flex;
+    margin-left: 88px;
   }
 }
 
@@ -534,6 +536,7 @@ textarea {
   .contacts {
     display: flex;
     flex-direction: column;
+    margin-left: auto;
   }
 }
 
@@ -761,6 +764,7 @@ textarea {
 .mobile-social {
   display: inline-flex;
   margin-bottom: 48px;
+  flex-wrap: wrap;
 }
 
 .mobile-social-item {
@@ -1090,6 +1094,7 @@ textarea {
   flex-basis: calc(100% / 2 - 30px);
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -1170,6 +1175,7 @@ textarea {
   letter-spacing: 0.06em;
   margin-left: 24px;
   margin-bottom: 4px;
+  margin-top: 20px;
 }
 
 .gallery__text {
@@ -1178,6 +1184,7 @@ textarea {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
+  margin-bottom: 20px;
 }
 
 .gallery {
@@ -1189,7 +1196,7 @@ textarea {
 
 .gallery__elements {
   min-width: 354px;
-  height: 404px;
+  max-height: 404px;
   margin-bottom: 30px;
   background: #ffffff;
   border: 1px solid #eeeeee;
@@ -1440,7 +1447,8 @@ textarea {
 .footer-box__input {
   padding-left: 16px;
   height: 50px;
-  width: 450px;
+  max-width: 450px;
+  width: 90vw;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -1449,6 +1457,12 @@ textarea {
   outline: none;
   color: var(--primary-white-color);
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-box__input {
+    width: 450px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
